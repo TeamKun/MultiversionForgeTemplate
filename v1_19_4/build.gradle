@@ -1,0 +1,42 @@
+plugins {
+    id 'net.minecraftforge.gradle' version '5.1.+'
+    id 'com.github.johnrengelman.shadow' version '7.+'
+}
+
+version = '1.0.0'
+group = 'net.kunmc.lab' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '17' // Need this here so eclipse task generates correctly.
+minecraft {
+    // The mappings can be changed at any time and must be in the following format.
+    // Channel:   Version:
+    // official   MCVersion             Official field/method names from Mojang mapping files
+    // parchment  YYYY.MM.DD-MCVersion  Open community-sourced parameter names and javadocs layered on top of official
+    // mappings channel: 'official', version: '1.19.4'
+    mappings channel: 'official', version: '1.19.4'
+}
+
+repositories {
+    mavenLocal()
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.19.4-45.1.0'
+
+}
+
+shadowJar {
+    dependencies {
+        // include(dependency('net.kunmc.lab:example:1.0.0'))
+    }
+
+    archiveName = "PAuth.jar"
+}
+
+reobf {
+    shadowJar {}
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}

@@ -1,0 +1,10 @@
+modLoader = "javafml"
+loaderVersion = "[45,)"
+license = "All rights reserved."
+
+[[mods]]
+modId = "pauth"
+version = "${file.jarVersion}"
+displayName = "PAuth"
+authors = "Peyang"
+description = "Authenticates players with the provided credentials."

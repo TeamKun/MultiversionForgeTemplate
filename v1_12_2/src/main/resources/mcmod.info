@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "example",
+    "name": "Example",
+    "description": "Example mod.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "Peyang"
+    ],
+    "credits": "Peyang",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
